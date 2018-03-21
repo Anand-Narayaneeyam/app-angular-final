@@ -1,0 +1,40 @@
+<div id="container" class="container">
+    <!-- <h3 align="center">Sign Up</h3> -->
+    <form class="justify-content-center" #editDetails="ngForm" (ngSubmit)="onEditDetails(editDetails.value)">
+  
+      <div class="form-group" style="display: inline-flex;">
+        <label for="Name" style="margin-top: 10px;">Name:</label>
+        <input type="text" class="form-control" style="margin-left: 5px;" placeholder="First Name" name="firstName" [(ngModel)]="firstName" ngModel required>
+        <input type="text" class="form-control" style="margin-left: 8px;" name="lastName" placeholder="Last Name" [(ngModel)]="lastName" ngModel required>
+      </div>
+  
+      <div>
+        <label for="gender">Gender:</label>
+        <div style="margin-left: 60px;" class="form-group">
+          <input type="radio" value="Male" name="gender" [(ngModel)]= "gender" required> Male
+          <br>
+          <input type="radio" value="Female" name="gender" [(ngModel)]="gender" required> Female
+          <br>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="gender">Date of Birth:</label>
+        <input type="date" name="dob" [(ngModel)]="dob" ngModel required>
+      </div>
+  
+      <div class="form-group">
+        <label for="gender">Phone Number:</label>
+        <input type="number" class="form-control" name="phoneNumber" [(ngModel)]="phoneNumber" name="phoneNumber" ngModel required>
+      </div>
+  
+      <button class="btn btn-default" type="submit" [disabled]="!editDetails.valid">
+        <i class="fa fa-floppy-o"></i>
+        Save Changes
+      </button>
+      <button class="btn btn-default" type="button" (click)="resetClick(editDetails)">
+        <i class="fa fa-repeat"></i>
+        Reset
+      </button>
+    </form>
+  </div>

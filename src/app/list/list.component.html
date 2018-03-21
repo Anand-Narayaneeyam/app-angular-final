@@ -1,0 +1,22 @@
+<table cellpadding="0" cellspacing="2">
+  <tr style="background-color:palegoldenrod">
+    <th style="border-bottom:2px solid #dadada;border-right:2px solid #dadada;border-top:2px solid #dadada;border-left: 2px solid #dadada" align="left">Name</th>
+    <th style="border-bottom:2px solid #dadada;border-right:2px solid #dadada;border-top:2px solid #dadada;border-left: 2px solid #dadada" align="left">Gender</th>
+    <th style="border-bottom:2px solid #dadada;border-right:2px solid #dadada;border-top:2px solid #dadada;border-left: 2px solid #dadada" align="left">Date of Birth</th>
+    <th style="border-bottom:2px solid #dadada;border-right:2px solid #dadada;border-top:2px solid #dadada;border-left: 2px solid #dadada" align="left">Phone Number</th>
+    <th style="border-bottom:2px solid #dadada;border-right:2px solid #dadada;border-top:2px solid #dadada;border-left: 2px solid #dadada" align="left">Edit</th>
+    <th style="border-bottom:2px solid #dadada;border-right:2px solid #dadada;border-top:2px solid #dadada;border-left: 2px solid #dadada" align="left">Delete</th>
+  </tr>
+<tr *ngFor="let el of dataArray; let i = index"  [ngStyle]="i%2!=0?{'background-color':'whitesmoke'}:{'background-color':'white'}">
+  <td style="border-bottom:2px solid #dadada;border-right:2px solid #dadada;border-top:2px solid #dadada;border-left: 2px solid #dadada" align="left">{{el.firstName}}, {{el.lastName}}</td>
+  <td style="border-bottom:2px solid #dadada;border-right:2px solid #dadada;border-top:2px solid #dadada;border-left: 2px solid #dadada" align="left">{{el.gender}}</td>
+  <td style="border-bottom:2px solid #dadada;border-right:2px solid #dadada;border-top:2px solid #dadada;border-left: 2px solid #dadada" align="left">{{el.dob}}</td>
+  <td style="border-bottom:2px solid #dadada;border-right:2px solid #dadada;border-top:2px solid #dadada;border-left: 2px solid #dadada" align="left">{{el.phoneNumber}}</td>
+  <td style="border-bottom:2px solid #dadada;border-right:2px solid #dadada;border-top:2px solid #dadada;border-left: 2px solid #dadada;text-align: center" align="left">
+    <a (click)="editClick(el)"> <i class="fa fa-pencil" aria-hidden="true"></i></a>
+  </td>
+    <td style="border-bottom:2px solid #dadada;border-right:2px solid #dadada;border-top:2px solid #dadada;border-left: 2px solid #dadada;text-align: center" align="left">
+      <a (click)="deleteClick(el._id)"> <i class="fa fa-trash-o" aria-hidden="true"></i></a>
+    </td>
+</tr>
+</table>
